@@ -1,0 +1,20 @@
+<p>{{title}} : {{getPools()}}</p>
+
+<div>
+    <span>{{count}} Polls</span>
+     <ul *ngFor="let poll of polls">  {{poll}} </ul>
+</div>
+<!-- Property Binding -->
+<div>
+    <img [src]="imgUrl" alt="">
+</div>
+<div>
+    <table>
+        <!-- attribute binding -->
+        <tr>
+            <td [attr.colspan]="colSpan"></td>
+        </tr>
+    </table>
+
+</div>
+<button class="btn btn-primary">Click</button>
