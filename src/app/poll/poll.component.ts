@@ -21,4 +21,33 @@ export class PollComponent {
   getPools(){
     return "Add your Poll Now"
   }
+  onSave($event:any){
+    console.log("Saved Button Was Clicked",$event);
+    $event.stopPropagation();
+    
+  }
+  clickDiv(){
+    console.log('Div Clicked');
+    
+  }
+
+  clickEnter(){
+    console.log("Enter Clicked");
+    
+  }
+
+  // clickEnterOldWay($event : any){
+  //   if($event.keyCode === 13) console.log("Enter Clicked With the old way event filtering");
+    
+  // }
+
+  GetValue($event :any){
+    console.log($event.target.value);
+    
+  }
+
+  GetValueTheNewWay(email:string){
+    console.log(email);
+    
+  }
 }

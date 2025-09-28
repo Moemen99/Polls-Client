@@ -28,3 +28,21 @@
       <i class="fa-brands fa-instagram"></i>
 
   </div>
+<!-- Event Bimding -->
+  <div (click)="clickDiv()">
+    <button class="btn btn-danger" (click)="onSave($event)" >
+        Save
+    </button>
+  </div>
+  <!-- //How Angular deal with Event filtering -->
+    <input class=" form-control form-check-input w-75 h-100 mt-4" (keyUp.enter)="clickEnter()" />
+
+<!-- Old Way for event filtering -->
+     <!-- <input class=" form-control form-check-input w-75 h-100 mt-4" (keyUp)="clickEnterOldWay($event)" /> -->
+
+     <!-- Getting Values from an input  -->
+      <!-- Old Way -->
+     <input class=" form-control form-check-input w-75 h-100 mt-4" (keyUp.enter)="GetValue($event)"/>
+     <!-- New Way with template Variables -->
+     <input #email class=" form-control form-check-input w-75 h-100 mt-4" (keyUp.enter)="GetValueTheNewWay(email.value)"/>
+  
