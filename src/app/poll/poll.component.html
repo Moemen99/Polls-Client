@@ -45,4 +45,47 @@
      <input class=" form-control form-check-input w-75 h-100 mt-4" (keyUp.enter)="GetValue($event)"/>
      <!-- New Way with template Variables -->
      <input #email class=" form-control form-check-input w-75 h-100 mt-4" (keyUp.enter)="GetValueTheNewWay(email.value)"/>
+
+     <!-- Two way data binding the old way -->
+    <!-- <input [value]="emailAddress" class="form-control form-check-input w-75 h-100 mt-4"  (keyUp.enter) = "emailAddress = $event.target.value; bindInputData($event)"> -->
+
+    <!-- Two way data Binding -->
+      <input [(ngModel)]="emailAddress" class="form-control form-check-input w-75 h-100 mt-4"  (keyUp.enter) = "bindInputData($event)">
+
+      <!-- Built in pipes Pipes -->
+       <div>
+        <span>
+            {{poll.title | uppercase}}  
+        </span><br>
+                <span>
+            {{poll.rating | number : '1.2-2'}} 
+        </span><br>
+                <span>
+            {{poll.voters |number}} 
+        </span><br>
+                <span>
+            {{poll.cost | currency :'SAR':'symbol':'3.2-2'}} 
+        </span><br>
+        <span>
+            {{poll.releaseDate | date :'longDate'}} 
+        </span>
+       </div>
+
+       <div>
+       {{text | summary : 10}}
+       </div>
+
+       <div class="w-100">
+        
+        <!-- <i [class]="'fa-'+className+ '  fa-star'" (click)="clickFavourite()"  ></i> -->
+        <i class="fa-star" [class.fa-regular]="!isFavourite" [class.fa-solid]="isFavourite" (click)="clickFavourite()"  ></i> 
+        <i class="fa-solid fa-star"></i>
+
+       </div>
+
+       <input type="text" [(ngModel)]="title2" class="w-100 h-100 form-check-input">
+       <div class="mt-5 mb-5">
+        {{title2 | preposition}}
+       </div>
+
   
