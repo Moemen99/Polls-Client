@@ -7,13 +7,15 @@ import { PollComponent } from './poll/poll.component';
 import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './Pipes/summary.pipe';
 import { PropositionPipe } from './Pipes/proposition.pipe';
+import { FavouriteComponent } from './favourite/favourite.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PollComponent,
     SummaryPipe,
-    PropositionPipe
+    PropositionPipe,
+    FavouriteComponent
   ],
   imports: [
     BrowserModule,

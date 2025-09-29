@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { theChangeOnData } from './favourite/favourite.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Client';
+  post={
+    myTitle: '',
+    isFavourite:true,
+
+  }
+
+  changeOnFavourite(eventArgs:theChangeOnData){
+    console.log("changedDataIs:",eventArgs);
+    
+  }
 }
