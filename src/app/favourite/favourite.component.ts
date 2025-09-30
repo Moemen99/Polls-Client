@@ -8,7 +8,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class FavouriteComponent {
   // now isFavourite can take data from outside of the favourite component
 @Input() isFavourite : boolean = false;
-@Output() change= new EventEmitter();
+// @Output() change= new EventEmitter();
+@Output('click') change= new EventEmitter(); // Aliasing output properties
   className ="regular"
   clickFavourite() {
     this.isFavourite =!this.isFavourite;

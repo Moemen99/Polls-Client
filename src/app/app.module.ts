@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './Pipes/summary.pipe';
 import { PropositionPipe } from './Pipes/proposition.pipe';
 import { FavouriteComponent } from './favourite/favourite.component';
+import { LikeComponent } from './like/like.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FavouriteComponent } from './favourite/favourite.component';
     PollComponent,
     SummaryPipe,
     PropositionPipe,
-    FavouriteComponent
+    FavouriteComponent,
+    LikeComponent
   ],
   imports: [
     BrowserModule,
