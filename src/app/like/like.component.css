@@ -1,0 +1,12 @@
+.like-color{
+color: deeppink;
+}
+.unlike-color{
+    color: #ccc;
+}
+.fa-heart{
+    cursor: pointer;
+}
+.count,.heading{
+   user-select: none !important;
+}

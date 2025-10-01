@@ -7,3 +7,7 @@
 <div>
     <ng-content select=".boading"></ng-content>
 </div>
+
+
+<i [class.like-color]="isActive" [class.unlike-color]="!isActive" [class.fa-solid]="isActive" [class.fa-regular]="!isActive" class="fa-heart" (click)="clickLike()" ></i> 
+<span class="ms-2 count">{{likesCount}}</span>

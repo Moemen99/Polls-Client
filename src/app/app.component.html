@@ -3,11 +3,11 @@
 <!-- //with aliasing -->
 <favourite [isFavourite]="post.isFavourite" (click)="changeOnFavourite($event)"></favourite> 
 
-<app-like>
+<app-like [likesCount]="tweet.likesCount" [isActive]="tweet.isLiked" (click)="clickOnLike($event)">
     <div class="heading">
         hiii this is ng-Content
     </div>
-    <ng-container class="boading">
+    <ng-container class="boading user-select">
         hii this is ng-Container
     </ng-container>
 </app-like>
