@@ -52,8 +52,19 @@
         Otherwise
     </div>
 </div>
+
+<button class="btn btn-danger" (click)="AddCourse()">
+    Add
+</button>
 <ul>
-    <li *ngFor="let course of myCourses; index as i;even as isEven"><span>{{i}}</span> {{course.name}} <span *ngIf="isEven"> (Even)</span> </li> 
+    <li *ngFor="let course of myCourses; index as i;even as isEven ;odd as isOdd"><span>{{i}}</span> {{course.name}} <span *ngIf="isEven"> (Even)</span> 
+        <span (click)="RemoveCourse(course)" 
+              class="btn btn-success " 
+              [class.ms-2]="isEven"
+              [class.ms-5]="isOdd">
+              Remove
+       </span> 
+    </li>  
 </ul>
 
 

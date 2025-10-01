@@ -16,6 +16,14 @@ export class AppComponent {
     {id:3,name:"Course3"},
     {id:4,name:"Course4"}
   ]
+  AddCourse(){
+     let addedId =this.myCourses.length 
+     this.myCourses.push({id :addedId ,name:`course${addedId}` })
+  }
+  RemoveCourse(course:{id:number,name:string}){
+    let index = this.myCourses.indexOf(course);
+    this.myCourses.splice(index,1);
+  }
   title = 'Client';
   post={
     myTitle: '',
