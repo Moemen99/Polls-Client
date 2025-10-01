@@ -8,6 +8,14 @@ import { likeArgs } from './like/like.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  viewMode='otherwise'
+  courses = [1]
+  myCourses =[
+    {id:1,name:"Course1"},
+    {id:2,name:"Course2"},
+    {id:3,name:"Course3"},
+    {id:4,name:"Course4"}
+  ]
   title = 'Client';
   post={
     myTitle: '',
@@ -17,7 +25,7 @@ export class AppComponent {
   tweet ={
     body:"here is the body of a tweet",
     isLiked:false,
-    likesCount:0
+    likesCount:10
   }
 
   changeOnFavourite(eventArgs:theChangeOnData){
