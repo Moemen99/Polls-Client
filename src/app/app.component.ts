@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { theChangeOnData } from './favourite/favourite.component';
-import { likeArgs } from './like/like.component';
+import { theChangeOnData } from './components/favourite/favourite.component';
+import { likeArgs } from './components/like/like.component';
 
 @Component({
   selector: 'app-root',

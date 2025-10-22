@@ -1,4 +1,4 @@
-import { PollService } from './../poll.service';
+import { PollService } from '../../services/poll.service';
 import { Component } from '@angular/core';
 
 @Component({
