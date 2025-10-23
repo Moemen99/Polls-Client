@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private url = 'http://mysurveybasket.runasp.net';
+  public url = 'http://mysurveybasket.runasp.net';
   userToken !: string;
 
   constructor(private httpClient :HttpClient) {

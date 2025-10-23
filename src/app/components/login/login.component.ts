@@ -47,8 +47,8 @@ export class LoginComponent {
   login(){
     this.authService.login(this.loginForm.value).subscribe({
       next : (response)=>{
-        console.log("login successful",response);
-        console.log(response.token);
+        // console.log("login successful",response);
+        // console.log(response.token);
         //store the token in local storage
         localStorage.setItem('token',response.token);
         this.authService.userToken = response.token;

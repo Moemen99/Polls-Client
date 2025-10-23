@@ -4,3 +4,9 @@
   font-weight: 600;
   color: #2d3748;
   }
+   .navbar-nav {
+    align-items: center;
+   }
+   textarea{
+    resize: none;
+   }

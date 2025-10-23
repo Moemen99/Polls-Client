@@ -1,91 +1,54 @@
-<p>{{title}} : {{getPools()}}</p>
-
-<div>
-    <span>{{count}} Polls</span>
-     <ul *ngFor="let poll of polls">  {{poll}} </ul>
+<!--  start adding poll using reactive form  -->
+<div class="container mt-5">
+  <h2>Add New Poll</h2>
+  <form [formGroup]="pollForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" id="title" class="form-control" formControlName="title">
+    </div>
+    <div class="mb-3">
+      <label for="summary" class="form-label">Summary</label>
+      <textarea id="summary" class="form-control" formControlName="summary" ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="startsAt" class="form-label">Starts At</label>
+      <input type="date" id="startsAt" class="form-control" formControlName="startsAt">
+    </div>
+    <div class="mb-3">
+      <label for="endsAt" class="form-label">Ends At</label>
+      <input type="date" id="endsAt" class="form-control" formControlName="endsAt">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="pollForm.invalid">Create Poll</button>
+  </form>
 </div>
-<!-- Property Binding -->
-<div>
-    <img [src]="imgUrl" alt="">
+<!--  end adding poll using reactive form  -->
+  <!-- list of polls -->
+<div class="container mt-5">
+  <h2>Polls List</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Summary</th>
+        <th>Is Published</th>
+        <th>Starts At</th>
+        <th>Ends At</th>
+      </tr>             
+    </thead>
+    <tbody>
+      <tr *ngFor="let poll of pollRes">
+        <td>{{ poll.id }}</td>
+        <td>{{ poll.title }}</td>
+        <td>{{ poll.summary }}</td>
+        <td>{{poll.isPublished}}</td>
+        <td>{{ poll.startsAt | date }}</td>
+        <td>{{ poll.endsAt | date }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-<div>
-    <table>
-        <!-- attribute binding -->
-        <tr>
-            <td [attr.colspan]="colSpan"></td>
-        </tr>
-    </table>
 
-</div>
-<!-- Adding bootstrap class and active class with class binding -->
-<button class="btn btn-primary" [class.active]="isActive">Click</button>
-<!-- Style Binding -->
-<div>
-    <span [style.backgroundColor]="isActive? 'pink':'red'">hi</span>
-</div>
- <!-- Font awesome -->
-  <div>
-      <i class="fa-brands fa-instagram"></i>
-
-  </div>
-<!-- Event Bimding -->
-  <div (click)="clickDiv()">
-    <button class="btn btn-danger" (click)="onSave($event)" >
-        Save
-    </button>
-  </div>
-  <!-- //How Angular deal with Event filtering -->
-    <input class=" form-control form-check-input w-75 h-100 mt-4" (keyUp.enter)="clickEnter()" />
-
-<!-- Old Way for event filtering -->
-     <!-- <input class=" form-control form-check-input w-75 h-100 mt-4" (keyUp)="clickEnterOldWay($event)" /> -->
-
-     <!-- Getting Values from an input  -->
-      <!-- Old Way -->
-     <input class=" form-control form-check-input w-75 h-100 mt-4" (keyUp.enter)="GetValue($event)"/>
-     <!-- New Way with template Variables -->
-     <input #email class=" form-control form-check-input w-75 h-100 mt-4" (keyUp.enter)="GetValueTheNewWay(email.value)"/>
-
-     <!-- Two way data binding the old way -->
-    <!-- <input [value]="emailAddress" class="form-control form-check-input w-75 h-100 mt-4"  (keyUp.enter) = "emailAddress = $event.target.value; bindInputData($event)"> -->
-
-    <!-- Two way data Binding -->
-      <input [(ngModel)]="emailAddress" class="form-control form-check-input w-75 h-100 mt-4"  (keyUp.enter) = "bindInputData($event)">
-
-      <!-- Built in pipes Pipes -->
-       <div>
-        <span>
-            {{poll.title | uppercase}}  
-        </span><br>
-                <span>
-            {{poll.rating | number : '1.2-2'}} 
-        </span><br>
-                <span>
-            {{poll.voters |number}} 
-        </span><br>
-                <span>
-            {{poll.cost | currency :'SAR':'symbol':'3.2-2'}} 
-        </span><br>
-        <span>
-            {{poll.releaseDate | date :'longDate'}} 
-        </span>
-       </div>
-
-       <div>
-       {{text | summary : 10}}
-       </div>
-
-       <div class="w-100">
-        
-        <!-- <i [class]="'fa-'+className+ '  fa-star'" (click)="clickFavourite()"  ></i> -->
-        <i class="fa-star" [class.fa-regular]="!isFavourite" [class.fa-solid]="isFavourite" (click)="clickFavourite()"  ></i> 
-        <i class="fa-solid fa-star"></i>
-
-       </div>
-
-       <input type="text" [(ngModel)]="title2" class="w-100 h-100 form-check-input">
-       <div class="mt-5 mb-5">
-        {{title2 | preposition}}
-       </div>
-
+   
+<!-- end list of polls -->
   
