@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { ErrorResponse } from 'src/app/interfaces/error-response';
 
 @Component({
   selector: 'app-login',
@@ -56,13 +57,23 @@ export class LoginComponent {
         this.loading = false;
         this._router.navigate(['/home']);
       },
-      error : (error)=>{
-        console.error("login failed",error);
+      error : (error: { error: ErrorResponse })=>{
+      console.error("login failed",error);
+      
+      const errorResponse = error.error;
+      
+      if (errorResponse.errors && errorResponse.errors.length > 0) {
+        this.errorMessage = errorResponse.errors.join(', ');
+      } else if (errorResponse.title) {
+        this.errorMessage = errorResponse.title;
+      } else {
         this.errorMessage = 'Login failed. Please check your credentials.';
-        this.loading = false;
       }
-    });
-    this.loading = true;
+      
+      this.loading = false;
+    }
+  });
+  this.loading = true;
   }
 
 }

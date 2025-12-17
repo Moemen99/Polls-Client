@@ -14,7 +14,8 @@ import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';  
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { RegisterComponent } from './components/register/register.component';  
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     LoginComponent,
     HomeComponent,
     NavbarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { LoginForm } from '../interfaces/login-form';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { RegisterForm } from '../interfaces/register-form';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,9 @@ export class AuthService {
    isAuthenticated(): boolean {
     const token = localStorage.getItem('token');
     return !!token;
+  }
+  register(registerForm : RegisterForm) : Observable<any> {
+    return this.httpClient
+                .post(this.url + '/auth/register', registerForm);
   }
 }

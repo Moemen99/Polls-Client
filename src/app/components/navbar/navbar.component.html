@@ -15,6 +15,9 @@
     </ul>
     <!-- right side linkes -->
     <ul class="navbar-nav ms-auto me-lg-5">
+      <li *ngIf="!_authService.userToken" class="nav-item">
+        <a class="nav-link" routerLink="/register">Register</a>
+       </li>
        <li *ngIf="!_authService.userToken" class="nav-item">
         <a class="nav-link" routerLink="/login">Login</a>
        </li>

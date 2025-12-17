@@ -4,11 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   { path: 'home', canActivate: [AuthGuard] ,pathMatch:'full', component: HomeComponent },
   { path: '',canActivate: [AuthGuard] , pathMatch: 'full' , component: HomeComponent},
   {path: 'login', pathMatch: 'full' , component: LoginComponent},
+  {path: 'register', pathMatch: 'full' , component: RegisterComponent},
   {path: '**', component: NotFoundComponent}
 ];
 
